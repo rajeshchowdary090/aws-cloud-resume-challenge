@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Rajesh Tanikonda</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header" id="home">
+        <h1>Sai Rajesh Tanikonda</h1>
+        <p>MIS Student at the University of Houston</p>
+        <script src="https://kit.fontawesome.com/43307d52fa.js" crossorigin="anonymous"></script>
+        <div class="socials">
+            <a href="https://github.com/rajeshchowdary090" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/sai-rajesh-tanikonda-3a8752291/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:stanikon@cougarnet.uh.edu" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <h2>Page Views: <span id="visitor_count"></span></h2>
+    </div>
+
+    <nav role="navigation" id="navbar">
+        <a data-page="about" class="active" href="#home">Home</a>
+        <a data-page="experience" href="#experience">Experience</a>
+        <a data-page="projects" href="#projects">Projects</a>
+        <a data-page="education" href="#education">Education</a>
+        <a data-page="certifications" href="#certifications">Certifications</a>
+    </nav>  
+
+    <div class="section">
+        <div id="experience">
+            <h1>Experience</h1>
+            <div class="experience">
+                <h2>Teaching Assistant</h2>
+                <h3>C.T. Bauer College of Business</h3>
+                <h3>Jan 2024 – Present</h3>
+                <ul>
+                    <li>Support professor in course delivery and student engagement.</li>
+                    <li>Develop instructional materials and foster a positive learning environment.</li>
+                    <li>Lead review sessions to strengthen student understanding and exam preparation.</li>
+                </ul>
+
+                <h2>Project Management Intern</h2>
+                <h3>GlobalShala</h3>
+                <h3>Oct 2022 – Nov 2022</h3>
+                <ul>
+                    <li>Led a cross-functional team in an agile data visualization project, ensuring alignment with organizational goals.</li>
+                    <li>Managed project timelines, milestones, and deliverables using Zoho Projects.</li>
+                    <li>Created interactive data visualizations with Power BI, translating complex datasets into intuitive insights.</li>
+                    <li>Presented project updates to stakeholders, documenting methodologies and results for future use.</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div id="projects">
+            <h1>Projects</h1>
+            <div class="projects">
+                <h2>Cloud Resume Challenge - AWS</h2>
+                <h3>Jul 2024</h3>
+                <ul>
+                    <li>Configured and deployed a static website using AWS SAM CLI on Amazon S3 with HTTPS for security.</li>
+                    <li>Set up Lambda functions to fetch and update website visitor count data from DynamoDB.</li>
+                    <li>Integrated GitHub Actions to deploy SAM applications and update the S3 bucket automatically when new code is pushed.</li>
+                </ul>
+
+                <h2>Sentiment Analysis using NLTK</h2>
+                <h3>Jul 2023</h3>
+                <ul>
+                    <li>Applied RoBERTa model for sentiment analysis on Amazon reviews, extracting insights from customer feedback.</li>
+                    <li>Achieved accurate classification across multiple product categories.</li>
+                    <li>Used Matplotlib, NumPy, Pandas, and Seaborn for data visualization.</li>
+                </ul>
+
+                <h2>Economic Data Analysis</h2>
+                <h3>Jun 2023</h3>
+                <ul>
+                    <li>Automated economic data analysis with Python and FRED API to access macroeconomic indicators.</li>
+                    <li>Used statistical methods to reveal insights and support informed decision-making.</li>
+                    <li>Collaborated with teams and documented results for strategic planning.</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div id="education">
+            <h1>Education</h1>
+            <div class="education">
+                <h2>University of Houston</h2>
+                <h3>M.S. in Management Information Systems</h3>
+                <h3>Expected Graduation: May 2025</h3>
+                <ul>
+                    <li><strong>Relevant Courses:</strong> Cloud Data Visualization, Cloud and Collaboration Solutions, Transaction Processing Systems, Database Management Systems</li>
+                </ul>
+                
+                <h2>Mahatma Gandhi Institute of Technology</h2>
+                <h3>B.Tech in Electronics and Communications Engineering</h3>
+                <h3>2018 - 2022</h3>
+            </div>
+        </div>
+        <hr>
+        <div id="certifications">
+            <h1>Certifications</h1>
+            <div class="certifications">
+                <h2>AWS Certified Solutions Architect – Associate*</h2>
+
+                <h2>Cisco Certified Network Associate (CCNA)*</h2>
+                <ul>
+                    <li>*In the process of obtaining</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer"></div>
+
+    <script>
+        fetch('https://scwckjdc87.execute-api.us-east-1.amazonaws.com/count')
+        .then(response => response.json())
+        .then((data) => {
+            document.getElementById('visitor_count').innerText = data.Count
+        })
+    </script>
+</body>
+</html>
